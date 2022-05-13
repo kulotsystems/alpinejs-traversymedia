@@ -31,7 +31,7 @@
         }">
             <!-- x-on and x-bind -->
             <button
-                x-on:click="open = !open"
+                @click="open = !open"
                 :class="open ? 'bg-blue-800' : 'bg-slate-700'"
                 class="text-white px-4 py-2 rounded-xl"
             >
@@ -78,6 +78,12 @@
             <template x-for="post in posts">
                 <div x-text="post.title"></div>
             </template>
+            <button
+                @click="posts.push({ title: 'New Post' })"
+                class="bg-blue-800 text-white px-4 py-2 rounded-lg mt-4"
+            >
+                Add Post
+            </button>
         </div>
     </div>
 </body>
