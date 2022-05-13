@@ -86,8 +86,8 @@
                 Add Post
             </button>
 
-            <!-- x-ref -->
             <div class="my-6">
+                <!-- x-ref -->
                 <div x-ref="text"></div>
 
                 <button
@@ -100,6 +100,14 @@
 
             <!-- x-html -->
             <div x-html="(await axios.get('./partial.html')).data"></div>
+
+            <!-- $el -->
+            <button
+                @click="$el.innerHTML = 'Hello World'"
+                class="mt-4 p-4 border"
+            >
+                Replace Text
+            </button>
 
         </div>
     </div>
