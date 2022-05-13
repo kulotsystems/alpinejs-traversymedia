@@ -21,7 +21,13 @@
         <div x-data="{
             open  : false,
             name  : 'kulotsystems',
-            search: ''
+            search: '',
+            posts : [
+                { title: 'Post One' },
+                { title: 'Post Two' },
+                { title: 'Post Three' },
+                { title: 'Post Four' },
+            ]
         }">
             <!-- x-on and x-bind -->
             <button
@@ -59,6 +65,19 @@
                 <span class="font-bold">Searching for:</span>
                 <span x-text="search"></span>
             </p>
+
+            <!-- x-if -->
+            <template x-if="open">
+                <div class="bg-gray-50 p-2 mt-8">
+                    Template based on a condition
+                </div>
+            </template>
+
+            <!-- x-for -->
+            <h3 class="text-2xl mt-6 mb-3 font-bold">Posts</h3>
+            <template x-for="post in posts">
+                <div x-text="post.title"></div>
+            </template>
         </div>
     </div>
 </body>
