@@ -18,12 +18,16 @@
         <h1 class="text-5xl mb-4">Alpine.js Demo</h1>
 
         <!-- x-data alpine component -->
-        <div x-data="{ open: false, name: 'kulotsystems'}">
+        <div x-data="{
+            open  : false,
+            name  : 'kulotsystems',
+            search: ''
+        }">
             <!-- x-on and x-bind -->
             <button
-                    x-on:click="open = !open"
-                    :class="open ? 'bg-blue-800' : 'bg-slate-700'"
-                    class="text-white px-4 py-2 rounded-xl"
+                x-on:click="open = !open"
+                :class="open ? 'bg-blue-800' : 'bg-slate-700'"
+                class="text-white px-4 py-2 rounded-xl"
             >
                 Toggle
             </button>
@@ -44,6 +48,17 @@
             <!-- x-effect -->
             <div x-effect="console.log(open)"></div>
 
+            <!-- x-model -->
+            <input
+                x-model="search"
+                type="text"
+                class="border p-2 w-full mb-2 mt-6"
+                placeholder="Search for something..."
+            />
+            <p>
+                <span class="font-bold">Searching for:</span>
+                <span x-text="search"></span>
+            </p>
         </div>
     </div>
 </body>
