@@ -121,7 +121,21 @@
                     Notify
                 </button>
             </div>
+
+            <!-- $data -->
+            <button
+                @click="getLatestPost($data.posts)"
+                class="bg-orange-800 text-white mt-6 p-2 rounded-lg"
+            >
+                Get Latest Post
+            </button>
         </div>
     </div>
+
+    <script>
+        function getLatestPost(posts) {
+            console.log(posts.slice(-1).pop());
+        }
+    </script>
 </body>
 </html>
