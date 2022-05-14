@@ -132,6 +132,10 @@
         </div>
     </div>
 
+    <footer x-data class="text-center mt-10 mb-3">
+        <p>Copyright &copy; <span x-text="new Date().getFullYear()"></span></p>
+    </footer>
+
     <script>
         function getLatestPost(posts) {
             console.log(posts.slice(-1).pop());
