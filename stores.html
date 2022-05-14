@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendor/alpinejs/3.10.2.js" defer></script>
+    <script src="vendor/tailwindcss/3.0.24.js"></script>
+    <title>Alpine.js Stores</title>
+</head>
+<body>
+    <div x-data :class="$store.darkMode.on && 'bg-gray-800 text-white'" class="container mx-auto max-w-sm mt-6 bg-gray-50 p-4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem cum, dicta, dolore
+        dolorem expedita facilis, minima necessitatibus nobis odio porro provident quibusdam rerum similique
+        tempora ut v elit! Aspernatur autem culpa dicta, esse  facere fuga ipsa natus nesciunt ut veniam.
+
+        <button
+            @click="$store.darkMode.toggle()"
+            :class="$store.darkMode.on && 'bg-gray-700'"
+            class="block mt-4 text-xs bg-gray-200 px-4 py-2"
+        >
+            Toggle Dark Mode
+        </button>
+    </div>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('darkMode', {
+                on: false,
+                toggle() {
+                    this.on = !this.on
+                }
+            });
+        });
+    </script>
+</body>
+</html>
